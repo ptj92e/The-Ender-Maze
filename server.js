@@ -18,6 +18,8 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+//getting environtment variables
+require('dotenv').config();
 
 //sync database, then set server up
 db.sequelize.sync({ force: true }).then(function() {
