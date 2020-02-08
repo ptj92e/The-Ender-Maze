@@ -1,0 +1,27 @@
+{
+  "name": "the-ender-maze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cassquatch/The-Ender-Maze.git"
+  },
+  "author": "Cassidy Fortner, Phillip Jones, Nuphawan Champanuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cassquatch/The-Ender-Maze/issues"
+  },
+  "homepage": "https://github.com/Cassquatch/The-Ender-Maze#readme"
+}

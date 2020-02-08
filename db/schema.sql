@@ -1,0 +1,1 @@
+CREATE DATABASE the_ender_maze_db;
