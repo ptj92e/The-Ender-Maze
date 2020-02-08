@@ -1,8 +1,8 @@
 
 {
   "development": {
-    "username": "ptj92e",
-    "password": "novaPuppy216",
+    "username": "",
+    "password": "",
     "database": "the_ender_maze_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
