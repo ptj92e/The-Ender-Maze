@@ -1,14 +1,38 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-image: url("/public/assets/images/Maze.png");
+    background-image: url("/assets/images/Maze.png");
+    background-size: cover;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin-top: 75px;
+    border-style: solid;
+    border-color: black;
 }
 h1 {
     font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding: 10px;
+    margin: 10px;
 }
 h3 {
     font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding: 10px;
+    margin: 10px;
 }
 p {
     font-family: 'Press Start 2P', cursive;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+.homeButton {
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    border: white;
+    padding: 5px;
+    margin: 15px;
 }
