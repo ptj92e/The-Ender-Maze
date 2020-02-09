@@ -3,3 +3,12 @@ body {
     padding: 0px;
     background-image: url("/public/assets/images/Maze.png");
 }
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+h3 {
+    font-family: 'Press Start 2P', cursive;
+}
+p {
+    font-family: 'Press Start 2P', cursive;
+}
