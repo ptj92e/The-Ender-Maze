@@ -25,6 +25,9 @@ app.use(express.static("public"));
 //getting environtment variables
 require('dotenv').config();
 
+//requires api-routes for the server to use
+require("./controllers/api-routes")(app);
+
 //sync database, then set server up
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
