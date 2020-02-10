@@ -20,6 +20,8 @@ class Character {
         console.log("You feel well rested.");
     }
 
+
+    //method that will be called after killing enemies, gaining experience towards a threshold, then once it is passed, levelling up, and then subtracting the remaining experience gained from the exp needed to level
     gainExperience(exp){
         //threshold for levelling
         const exp_to_level = 1000 * parseInt(this.level);
@@ -32,7 +34,7 @@ class Character {
         }
 
     }
-
+    //base level up method, overriding in each of the subclasses that extend character to update the stats according to the subclass
     levelUp(){
         this.max_health = parseInt(this.base_health) + parseInt((this.stamina * 10));
         this.level += 1;
