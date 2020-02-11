@@ -36,3 +36,7 @@ console.log(`${enemy.name}'s speed has been reduced to ${enemy.speed}`);
 
 wizard1.basicAttack(wizard1.weapon, enemy);
 console.log(`${enemy.name} Health: ${enemy_health}`);
+
+/**
+ * end of combat simulating
+ */
