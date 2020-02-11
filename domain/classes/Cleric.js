@@ -1,6 +1,6 @@
 const Character = require("./Character");
 
-class cleric extends Character {
+class Cleric extends Character {
     constructor(){
         super(name, 12, 8, 8, 12);
     }
