@@ -3,6 +3,7 @@ const Character = require("./Character");
 class Paladin extends Character {
     constructor(name){
         super(name, 8, 10, 5, 15);
+        //think about adding weapon properties (damage, etc) so melee/basic attack damage can be calculated off of "weapon damage" instead of a static magic number
         this.weapon = "Zweihander";
     }
 
@@ -17,6 +18,11 @@ class Paladin extends Character {
                 console.log(`${spell} damage: ${damage}`);
                 target.health -= damage;
             }
+            break;
+
+            default: {
+                return;
+            }
         }
     }
 
@@ -28,6 +34,11 @@ class Paladin extends Character {
                 let damage = 12 + (this.strength * 0.2);
                 console.log(`${ability} damage: ${damage}`);
                 target.health -= damage;
+            }
+            break;
+
+            default: {
+                return;
             }
         }
     }
@@ -42,6 +53,11 @@ class Paladin extends Character {
                 console.log(`${weapon} damage: ${wep_damage}`);
                 console.log(`${this.name} does ${damage} damage with ${weapon} to ${target.name}`);
                 target.health -= wep_damage;
+            }
+            break;
+
+            default: {
+                return;
             }
         }
     }
