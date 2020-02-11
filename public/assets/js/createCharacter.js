@@ -13,5 +13,9 @@ let enemy = {
     health: 100,
     experience_value: 100
 }
+console.log(`${enemy.name} Health: ${enemy.health}`);
+wizard1.castSpell("Fireball", enemy);
+console.log(`${enemy.name} Health: ${enemy.health}`);
+
 
 
