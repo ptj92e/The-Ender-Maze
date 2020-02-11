@@ -29,4 +29,16 @@ class Rogue extends Character {
 
        }
    }
+
+   //rogue levelup override, speed and agility the main stats here
+   levelUp(){
+    this.stamina += 1;
+    this.strength += 1;
+    this.intellect += 1;
+    this.agility += 2;
+    this.speed += 2;
+    super.levelUp();
 }
+}
+
+module.exports = Rogue;
