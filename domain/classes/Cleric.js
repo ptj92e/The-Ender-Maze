@@ -1,8 +1,10 @@
 const Character = require("./Character");
 
 class Cleric extends Character {
-    constructor(){
+    constructor(name){
         super(name, 12, 8, 8, 12);
+        //like the other classes, definitely work in weapon properties, so damage with melee skills/basic attacks can be calculated off of that, instead of the switch statement with static magic numbers
+        this.weapon = "Mace";
     }
 
     
@@ -10,18 +12,30 @@ class Cleric extends Character {
     
     For cleric, should obviously have some way to heal own health(in future potential healing of party health) but should also have the ability to cast damaging spells
     */
-   castSpell(spell){
+   castSpell(spell, target){
        switch(spell){
+            case "Holy Fire": {
+                let damage = 10 + (this.intellect * 0.2);
 
+                console.log(`${spell} damage: ${damage}`);
+                target.health -= damage;
+                console.log(`${this.name} does ${damage} damage to ${target.name}`);
+            }
        }
    }
 
   
 
    //basic weapon attack
-   basicAttack(weapon){
+   basicAttack(weapon, target){
        switch(weapon){
-
+            case "Mace": {
+                let wep_damage = 7 + (this.strength * 0.1);
+                
+                console.log(`${weapon} damage: ${wep_damage}`);
+                target.health -= wep_damage;
+                console.log(`${this.name} does ${wep_damage} damage to ${target.name}`);
+            }
        }
    }
 
