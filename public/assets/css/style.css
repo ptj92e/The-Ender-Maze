@@ -35,4 +35,45 @@ p {
     border: white;
     padding: 5px;
     margin: 15px;
+    text-decoration: none;
+    color: black;
+}
+.homeButton:hover {
+    color: black;
+    text-decoration: none;
+}
+.classButton {
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    border: white;
+    padding: 5px;
+    margin: auto;
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+}
+.classButton:hover {
+    color: black;
+    text-decoration: none;
+}
+li {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+.create {
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    border: white;
+    padding: 5px;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+}
+.create:hover {
+    color: black;
+    text-decoration: none;
+}
+input {
+    margin: 20px;
+    margin-top: 80px;
 }
