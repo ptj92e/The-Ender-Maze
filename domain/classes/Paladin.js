@@ -2,7 +2,7 @@ const Character = require("./Character");
 
 class Paladin extends Character {
     constructor(name){
-        super(name, 8, 10, 5, 15);
+        super(name, 8, 12, 5, 15);
         //think about adding weapon properties (damage, etc) so melee/basic attack damage can be calculated off of "weapon damage" instead of a static magic number
         this.weapon = "Zweihander";
     }
