@@ -1,8 +1,11 @@
 const Character = require("./Character");
 
 class Rogue extends Character {
-    constructor(){
+    constructor(name){
         super(name, 8, 10, 15, 12);
+
+        //come back to this when there is time, consider giving weapons properties like damage and such, so the damage calculation with basic attack isnt just a static number, and can be calculated without a switch statements with cases for every weapon
+        this.weapon = "Dirk";
     }
 
     
@@ -10,23 +13,43 @@ class Rogue extends Character {
     
     For the rogue, not sure what to do in terms of spells, so maybe won't have any at the start. But once I can figure out how to apply DoTs and have them tick, could have poisonWeapon() or something? just templating this out so I can come back when I have more to work with.
     */
-   castSpell(spell){
+   castSpell(spell, target){
        switch(spell){
+           //for now this will remain blank, but think of adding something like stealth, or some sort of vanish/quiet mechanic, maybe something that raises dodge based off this.agility
 
        }
    }
 
    //melee moves here, calculate damage based on agility, (maybe some small percentage of strength eventually, but for now just agility)
-   meleeAttack(attack){
-       switch(attack){
+   meleeAttack(ability, target){
+       switch(ability){
+            case "Shiv": {
+                let damage = 11 + ((this.strength + this.agility) * 0.2);
+            }
+            break;
 
+            default: {
+                return;
+            }
        }
    }
 
    //basic weapon attack
-   basicAttack(weapon){
+   basicAttack(weapon, target){
        switch(weapon){
+            case "Dirk": {
+                let wep_damage = 8 + ((this.strength + this.agility) * 0.1);
 
+                console.log(`${weapon} damage: ${wep_damage}`);
+                target.health -= damage;
+                console.log(`${this.name} does ${wep_damage} damage to ${target.name}`);
+
+            }
+            break;
+
+            default: {
+                return;
+            }
        }
    }
 
