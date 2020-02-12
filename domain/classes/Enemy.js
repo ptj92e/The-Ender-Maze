@@ -5,6 +5,7 @@
 class Enemy {
     constructor(name, character) {
         this.name = name;
+        this.hasAttacked = false;
 
         /**
          * decided to just pass the entire character object into the enemy constructor, that way I can use whichever properties I need to generate health, speed, experience, and damage with attacks, I don't see any reason to have stam, agi, int, or str for the enemy, at least for right now
