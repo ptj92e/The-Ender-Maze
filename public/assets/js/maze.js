@@ -1,20 +1,48 @@
 //Adding click listeners to create buttons
 $("#paladin").on("click", function () {
-    let paladinName = $("#paladinName").val().trim();
-    
+    let paladinName = {
+        name: $("#paladinName").val().trim()
+    };
+    $.ajax("/api/paladin" , {
+        type: "POST",
+        data: paladinName
+    }).then(function() {
+        console.log("Paladin created: " + paladinName);
+    });   
 });
 
 $("#cleric").on("click", function () {
-    let clericName = $("#clericName").val().trim();
-   
+    let clericName = {
+        name: $("#clericName").val().trim()
+    };
+    $.ajax("/api/cleric" , {
+        type: "POST",
+        data: clericName
+    }).then(function() {
+        console.log("Cleric created: " + clericName);
+    }); 
 });
 
 $("#rogue").on("click", function () {
-    let rogueName = $("#rogueName").val().trim();
-    
+    let rogueName = {
+        name: $("#rogueName").val().trim()
+    };
+    $.ajax("/api/rogue" , {
+        type: "POST",
+        data: rogueName
+    }).then(function() {
+        console.log("Rogue created: " + rogueName);
+    }); 
 });
 
 $("#wizard").on("click", function () {
-    let wizardName = $("#wizardName").val().trim();
-    
+    let wizardName = {
+        name: $("#wizardName").val().trim()
+    };
+    $.ajax("/api/wizard" , {
+        type: "POST",
+        data: wizardName
+    }).then(function() {
+        console.log("Wizard created: " + wizardName);
+    });     
 });
