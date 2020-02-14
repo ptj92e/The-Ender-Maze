@@ -3,10 +3,10 @@ const Character = require("./Character");
 class Paladin extends Character {
     constructor(name, level){
         super(name, level);
-        this.intellect = 12 + level;
-        this.strength = 8 + (level * 2);
-        this.agility = 8 + level;
-        this.stamina = 10 + (level * 2);
+        this.intellect = 8 + level;
+        this.strength = 12 + (level * 2);
+        this.agility = 5 + level;
+        this.stamina = 15 + (level * 2);
         this.speed = 10 + level;
         this.max_health = this.base_health + (this.stamina * 10);
         //think about adding weapon properties (damage, etc) so melee/basic attack damage can be calculated off of "weapon damage" instead of a static magic number

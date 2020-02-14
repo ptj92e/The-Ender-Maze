@@ -6,7 +6,7 @@ class Cleric extends Character {
         this.intellect = 12 + (level * 2);
         this.strength = 8 + level;
         this.agility = 8 + level;
-        this.stamina = 10 + (level * 2);
+        this.stamina = 12 + (level * 2);
         this.speed = 10 + level;
         this.max_health = this.base_health + (this.stamina * 10);
         //like the other classes, definitely work in weapon properties, so damage with melee skills/basic attacks can be calculated off of that, instead of the switch statement with static magic numbers
