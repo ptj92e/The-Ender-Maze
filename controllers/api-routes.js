@@ -1,5 +1,6 @@
 let express = require("express");
 let router = express.Router();
+const db = require("../models");
 //requiring classes
 let Paladin = require("../domain/classes/Paladin");
 let Cleric = require("../domain/classes/Cleric");
@@ -33,8 +34,11 @@ router.get("/rogue", (req, res) => {
 router.post("/api/paladin", (req, res) => {
     let paladin = new Paladin(req.body.name, 1);
     console.log(paladin);
+    
+    db.Hero.create(paladin).then((newHero) => {
 
-    res.json(paladin);
+        res.json(newHero);
+    });
 });
 
 router.get("/api/paladin", (req, res) => {
@@ -44,16 +48,28 @@ router.get("/api/paladin", (req, res) => {
 router.post("/api/cleric", (req, res) => {
     let cleric = new Cleric(req.body.name, 1);
     console.log(cleric);
+    db.Hero.create(cleric).then((newHero) => {
+
+        res.json(newHero);
+    });
 });
 
 router.post("/api/wizard", (req, res) => {
     let wizard = new Wizard(req.body.name, 1);
     console.log(wizard);
+    db.Hero.create(wizard).then((newHero) => {
+
+        res.json(newHero);
+    });
 });
 
 router.post("/api/rogue", (req, res) => {
     let rogue = new Rogue(req.body.name, 1);
     console.log(rogue);
+    db.Hero.create(rogue).then((newHero) => {
+
+        res.json(newHero);
+    });
 });
 
 router.get("/story", (req, res) => {
