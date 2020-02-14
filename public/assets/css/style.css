@@ -99,3 +99,20 @@ input {
     color: black;
     text-decoration: none;
 }
+#enderMaze {
+    margin-left: 75px;
+}
+#mazeFog {
+    position: relative;
+    left: -300px;
+}
+.storyButton {
+    margin: auto;
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    border: white;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
