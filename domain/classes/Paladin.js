@@ -1,8 +1,14 @@
 const Character = require("./Character");
 
 class Paladin extends Character {
-    constructor(name){
-        super(name, 8, 12, 5, 15);
+    constructor(name, level){
+        super(name, level);
+        this.intellect = 12 + level;
+        this.strength = 8 + (level * 2);
+        this.agility = 8 + level;
+        this.stamina = 10 + (level * 2);
+        this.speed = 10 + level;
+        this.max_health = this.base_health + (this.stamina * 10);
         //think about adding weapon properties (damage, etc) so melee/basic attack damage can be calculated off of "weapon damage" instead of a static magic number
         this.weapon = "Zweihander";
     }
@@ -63,14 +69,7 @@ class Paladin extends Character {
     }
 
     //level up override, paladin should gain more stam and strength, regular agility and intellect(as spells will be calculated off intellect, maybe also strenght for a combination, depending on what spell)
-    levelUp(){
-        this.stamina += 2;
-        this.strength += 2;
-        this.intellect += 1;
-        this.agility += 1;
-        this.speed += 1;
-        super.levelUp();
-    }
+   
 }
 
 module.exports = Paladin;

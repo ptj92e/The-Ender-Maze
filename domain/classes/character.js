@@ -1,16 +1,12 @@
 class Character {
-    constructor(name, intellect, strength, agility, stamina){
+    constructor(name, level){
         this.name = name;
         this.base_health = 100;
-        this.intellect = intellect;
-        this.strength = strength;
-        this.agility = agility;
-        this.stamina = stamina;
-        this.level = 1;
+      
+        this.level = level;
         this.experience = 0;
         this.hasAttacked = false;
-        this.speed = 10;
-        this.max_health = this.base_health + (this.stamina * 10);
+        
     }
 
     rest(){
