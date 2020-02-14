@@ -33,6 +33,12 @@ router.get("/rogue", function(req, res) {
 router.post("/api/paladin", function(req, res) {
     let paladin = new Paladin(req.body.name);
     console.log(paladin);
+
+    res.json(paladin);
+});
+
+router.get("/api/paladin", (req, res) => {
+    //handle the findall request here, figure out a way to actually use the class object, so that the methods are usable, unsure if it will work
 });
 
 router.post("/api/cleric", function(req, res) {
