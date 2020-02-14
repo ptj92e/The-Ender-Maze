@@ -1,5 +1,5 @@
 {
-    "Puzzle": [
+    "Encounters": [
         {
             "id": 1,
             "y": 0,
@@ -20,6 +20,20 @@
         },
         {
             "id": 2,
+            "y": 8,
+            "x": 3,
+            "type": "Combat",
+            "isCompleted": false
+        },
+        {
+            "id": 3,
+            "y": 7,
+            "x": 5,
+            "type": "Combat",
+            "isCompleted": false
+        },
+        {
+            "id": 4,
             "y": 3,
             "x": 4,
             "type": "Puzzle",
@@ -37,7 +51,7 @@
             "completed": "You see the door slowly rise and you are free to exit."
         },
         {
-            "id": 3,
+            "id": 5,
             "y": 1,
             "x": 6,
             "type": "Puzzle",
@@ -53,6 +67,32 @@
             "failed": "You are hit with a poison dart. You lose 20 hit points.",
             "hpLost": 20, 
             "completed": "Poison darts fly over your body. You are safe...for now."
+        },
+        {
+            "id": 6,
+            "y": 5,
+            "x": 7,
+            "type": "Combat",
+            "isCompleted": false
+        },
+        {
+            "id": 7,
+            "y": 5,
+            "x": 9,
+            "type": "Combat",
+            "isCompleted": false
+        },
+        {
+            "id": 8,
+            "y": 9,
+            "x": 9,
+            "type": "Level Complete",
+            "isCompleted": false,
+            "text": "You have completed level 1. Continue to level 2...if you dare.",
+            "choices": {
+                "1": "Continue",
+                "2": "Save and Quit"
+            }
         }
     ]
 }
