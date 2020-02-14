@@ -6,6 +6,8 @@ let Paladin = require("../domain/classes/Paladin");
 let Cleric = require("../domain/classes/Cleric");
 let Wizard = require("../domain/classes/wizard");
 let Rogue = require("../domain/classes/Rogue");
+//Sets the json object to a variable
+let level1 = require("../domain/story/level1.json");
 
 router.get("/",  (req, res) => {
     res.render("welcome");
@@ -33,8 +35,6 @@ router.get("/rogue", (req, res) => {
 
 router.post("/api/paladin", (req, res) => {
     let paladin = new Paladin(req.body.name, 1);
-    console.log(paladin);
-    
     db.Hero.create(paladin).then((newHero) => {
 
         res.json(newHero);
@@ -47,7 +47,6 @@ router.get("/api/paladin", (req, res) => {
 
 router.post("/api/cleric", (req, res) => {
     let cleric = new Cleric(req.body.name, 1);
-    console.log(cleric);
     db.Hero.create(cleric).then((newHero) => {
 
         res.json(newHero);
@@ -56,7 +55,6 @@ router.post("/api/cleric", (req, res) => {
 
 router.post("/api/wizard", (req, res) => {
     let wizard = new Wizard(req.body.name, 1);
-    console.log(wizard);
     db.Hero.create(wizard).then((newHero) => {
 
         res.json(newHero);
@@ -65,7 +63,6 @@ router.post("/api/wizard", (req, res) => {
 
 router.post("/api/rogue", (req, res) => {
     let rogue = new Rogue(req.body.name, 1);
-    console.log(rogue);
     db.Hero.create(rogue).then((newHero) => {
 
         res.json(newHero);
@@ -74,6 +71,10 @@ router.post("/api/rogue", (req, res) => {
 
 router.get("/story", (req, res) => {
     res.render("story");
+});
+//route to get the encounter from the json object
+router.get("/api/encounter", (req, res) => {
+    res.json(level1);
 });
 
 module.exports = router;
