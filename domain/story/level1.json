@@ -5,7 +5,7 @@
             "y": 0,
             "x": 2,
             "type": "Puzzle",
-            "isCompleted": false,
+            "isCompleted": true,
             "text": "You take a step forward and you hear a loud creaking sound. What do you do?",
             "choices": {
                 "1": "Drop a boulder where you stepped.",
@@ -23,7 +23,7 @@
             "y": 8,
             "x": 3,
             "type": "Combat",
-            "isCompleted": false
+            "isCompleted": true
         },
         {
             "id": 3,

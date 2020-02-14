@@ -160,18 +160,43 @@ $(document).keyup(function (e) {
     e.preventDefault();
 });
 
+function typeCheck(encounter) {
+    if ((encounter.type === "Puzzle") && (encounter.isCompleted === false)) {
+        $.ajax("/puzzle", {
+            type: "GET"
+        }).then(function() {
+            window.location.href = "/puzzle";
+        });
+    } else if (encounter.type === "Puzzle") {
+        console.log("Puzzle Complete");
+    } else if ((encounter.type === "Combat") && (encounter.isCompleted === false)) {
+        $.ajax("/puzzle", {
+            type: "GET"
+        }).then(function() {
+            window.location.href = "/combat";
+        });
+    } else if (encounter.type === "Combat") {
+        console.log("Combat Complete"); 
+    } else if (encounter.type === "Level Complete") {
+        console.log("You did it!");
+    }
+};
+
+//This gets the encounter information from the JSON file
 function getEncounter(id) {
     //Ajax call to retrieve information from the json object
     $.ajax("/api/encounter",  {
         type: "GET"
     }).then(function(data) {
         //loops over the json object
+        let encounter = [];
         for (let i = 0; i < data.Encounters.length; i++) {
             //if the id from the coordinates = the encounter id, the id is returned to be written to the handlebars
             if (id === data.Encounters[i].id) {
-                console.log(data.Encounters[i]);
+                encounter = data.Encounters[i];
             };
         };
+        typeCheck(encounter);
     });
 };
 //This function checks the players coordinates and if they match the given parameters, the getEncounter function is called and returns information from the json object to render the encounters

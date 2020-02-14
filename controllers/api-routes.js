@@ -69,12 +69,20 @@ router.post("/api/rogue", (req, res) => {
     });
 });
 
-router.get("/story", (req, res) => {
-    res.render("story");
+router.get("/maze", (req, res) => {
+    res.render("maze");
 });
 //route to get the encounter from the json object
 router.get("/api/encounter", (req, res) => {
     res.json(level1);
+});
+
+router.get("/puzzle", (req, res) => {
+    res.render("puzzle");
+});
+
+router.get("/combat", (req, res) => {
+    res.render("combat");
 });
 
 module.exports = router;
