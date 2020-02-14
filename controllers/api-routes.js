@@ -6,32 +6,32 @@ let Cleric = require("../domain/classes/Cleric");
 let Wizard = require("../domain/classes/wizard");
 let Rogue = require("../domain/classes/Rogue");
 
-router.get("/", function (req, res) {
+router.get("/",  (req, res) => {
     res.render("welcome");
 });
 
-router.get("/characters", function(req, res) {
+router.get("/characters", (req, res) => {
     res.render("class");
 });
 
-router.get("/paladin", function(req, res) {
+router.get("/paladin", (req, res) => {
     res.render("./characters/paladin");
 });
 
-router.get("/wizard", function(req, res) {
+router.get("/wizard", (req, res) => {
     res.render("./characters/wizard");
 });
 
-router.get("/cleric", function(req, res) {
+router.get("/cleric", (req, res) => {
     res.render("./characters/cleric");
 });
 
-router.get("/rogue", function(req, res) {
+router.get("/rogue", (req, res) => {
     res.render("./characters/rogue");
 });
 
-router.post("/api/paladin", function(req, res) {
-    let paladin = new Paladin(req.body.name);
+router.post("/api/paladin", (req, res) => {
+    let paladin = new Paladin(req.body.name, 1);
     console.log(paladin);
 
     res.json(paladin);
@@ -41,22 +41,22 @@ router.get("/api/paladin", (req, res) => {
     //handle the findall request here, figure out a way to actually use the class object, so that the methods are usable, unsure if it will work
 });
 
-router.post("/api/cleric", function(req, res) {
-    let cleric = new Cleric(req.body.name);
+router.post("/api/cleric", (req, res) => {
+    let cleric = new Cleric(req.body.name, 1);
     console.log(cleric);
 });
 
-router.post("/api/wizard", function(req, res) {
-    let wizard = new Wizard(req.body.name);
+router.post("/api/wizard", (req, res) => {
+    let wizard = new Wizard(req.body.name, 1);
     console.log(wizard);
 });
 
-router.post("/api/rogue", function(req, res) {
-    let rogue = new Rogue(req.body.name);
+router.post("/api/rogue", (req, res) => {
+    let rogue = new Rogue(req.body.name, 1);
     console.log(rogue);
 });
 
-router.get("/story", function(req, res) {
+router.get("/story", (req, res) => {
     res.render("story");
 });
 

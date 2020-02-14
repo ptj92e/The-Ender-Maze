@@ -2,8 +2,14 @@ const Character = require("./Character");
 
 class Wizard extends Character {
 
-    constructor(name) {
-        super(name, 15, 8, 8, 9);
+    constructor(name, level) {
+        super(name, level);
+        this.intellect = 12 + (level * 2);
+        this.strength = 8 + level;
+        this.agility = 8 + level;
+        this.stamina = 10 + level;
+        this.speed = 10 + (level * 2);
+        this.max_health = this.base_health + (this.stamina * 10);
         this.weapon = "Wizard Staff";
     }
 
@@ -49,14 +55,7 @@ class Wizard extends Character {
     }
 
     //level up method to increase level by 1, still not sure how to track experience, but working on it and will just call this function after a battle if this.experience goes over the level threshold
-    levelUp() {
-        this.intellect += 2;
-        this.agility += 1;
-        this.strength += 0;
-        this.stamina += 1;
-        this.speed += 1;
-        super.levelUp();
-    }
+ 
 
 }
 module.exports = Wizard;

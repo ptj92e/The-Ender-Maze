@@ -1,8 +1,14 @@
 const Character = require("./Character");
 
 class Cleric extends Character {
-    constructor(name){
-        super(name, 12, 8, 8, 12);
+    constructor(name, level){
+        super(name, level);
+        this.intellect = 12 + (level * 2);
+        this.strength = 8 + level;
+        this.agility = 8 + level;
+        this.stamina = 10 + (level * 2);
+        this.speed = 10 + level;
+        this.max_health = this.base_health + (this.stamina * 10);
         //like the other classes, definitely work in weapon properties, so damage with melee skills/basic attacks can be calculated off of that, instead of the switch statement with static magic numbers
         this.weapon = "Mace";
     }
@@ -40,14 +46,7 @@ class Cleric extends Character {
    }
 
    //for cleric, the level up override will increase int and stam as main stats
-   levelUp(){
-    this.stamina += 2;
-    this.strength += 1;
-    this.intellect += 2;
-    this.agility += 1;
-    this.speed += 1;
-    super.levelUp();
-}
+
 }
 
 module.exports = Cleric;
