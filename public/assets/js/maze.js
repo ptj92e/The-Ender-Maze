@@ -163,7 +163,6 @@ $(document).keyup(function (e) {
 });
 
 let game = function () {
-    console.log(player.y, player.x);
     mazeFog[player.y][player.x] = 0;
     createFog();
 }
