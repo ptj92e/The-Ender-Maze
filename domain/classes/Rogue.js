@@ -4,10 +4,10 @@ class Rogue extends Character {
     constructor(name, level){
         
         super(name, level);
-        this.intellect = 12 + level;
-        this.strength = 8 + level;
-        this.agility = 8 + (level * 2);
-        this.stamina = 10 + level;
+        this.intellect = 8 + level;
+        this.strength = 10 + level;
+        this.agility = 15 + (level * 2);
+        this.stamina = 12 + level;
         this.speed = 10 + (level * 2);
         this.max_health = this.base_health + (this.stamina * 10);
 
