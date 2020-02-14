@@ -1,0 +1,22 @@
+{
+    "Encounters": [
+        {
+            "id": 1,
+            "y": 0,
+            "x": 2,
+            "type": "Puzzle",
+            "isCompleted": false,
+            "text": "You take a step forward and you hear a loud creaking sound. What do you do?",
+            "choices": {
+                "1": "Drop a boulder where you stepped.",
+                "2": "Quickly jump out of the way.",
+                "3": "Keep moving forward.",
+                "4": "Stand still and wait."
+            },
+            "correctID": 1,
+            "failed": "You fell into a pit a lost 20 hit points.",
+            "completed": "The rock opened a trap door and you are safe."
+        },
+        {}
+    ]
+}
