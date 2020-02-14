@@ -1,5 +1,5 @@
 {
-    "Encounters": [
+    "Puzzle": [
         {
             "id": 1,
             "y": 0,
@@ -15,8 +15,44 @@
             },
             "correctID": 1,
             "failed": "You fell into a pit a lost 20 hit points.",
+            "hpLost": 20, 
             "completed": "The rock opened a trap door and you are safe."
         },
-        {}
+        {
+            "id": 2,
+            "y": 3,
+            "x": 4,
+            "type": "Puzzle",
+            "isCompleted": false,
+            "text": "You step into this room and a stone door closes behind you. On the door, you find this inscription: 'I weaken all men for hours each day. I show you strange visions while you are away. I take you by night, by day take you back, None suffer to have me, but do from my lack.'",
+            "choices": {
+                "1": "Love",
+                "2": "Beer",
+                "3": "Sleep",
+                "4": "Hunger"
+            },
+            "correctID": 3,
+            "failed": "The room fills with gas and you lose 20 hit points.",
+            "hpLost": 20, 
+            "completed": "You see the door slowly rise and you are free to exit."
+        },
+        {
+            "id": 3,
+            "y": 1,
+            "x": 6,
+            "type": "Puzzle",
+            "isCompleted": false,
+            "text": "You hear a click and something speeding through the air. What do you do?",
+            "choices": {
+                "1": "Jump as high as you can.",
+                "2": "Fall flat to the floor.",
+                "3": "Press yourself up against the wall.",
+                "4": "Run away."
+            },
+            "correctID": 2,
+            "failed": "You are hit with a poison dart. You lose 20 hit points.",
+            "hpLost": 20, 
+            "completed": "Poison darts fly over your body. You are safe...for now."
+        }
     ]
 }
