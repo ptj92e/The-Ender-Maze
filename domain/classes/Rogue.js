@@ -1,8 +1,15 @@
 const Character = require("./Character");
 
 class Rogue extends Character {
-    constructor(name){
-        super(name, 8, 10, 15, 12);
+    constructor(name, level){
+        
+        super(name, level);
+        this.intellect = 12 + level;
+        this.strength = 8 + level;
+        this.agility = 8 + (level * 2);
+        this.stamina = 10 + level;
+        this.speed = 10 + (level * 2);
+        this.max_health = this.base_health + (this.stamina * 10);
 
         //come back to this when there is time, consider giving weapons properties like damage and such, so the damage calculation with basic attack isnt just a static number, and can be calculated without a switch statements with cases for every weapon
         this.weapon = "Dirk";
@@ -54,14 +61,7 @@ class Rogue extends Character {
    }
 
    //rogue levelup override, speed and agility the main stats here
-   levelUp(){
-    this.stamina += 1;
-    this.strength += 1;
-    this.intellect += 1;
-    this.agility += 2;
-    this.speed += 2;
-    super.levelUp();
-}
+  
 }
 
 module.exports = Rogue;
