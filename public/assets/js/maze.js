@@ -3,12 +3,17 @@ $("#paladin").on("click", function () {
     let paladinName = {
         name: $("#paladinName").val().trim()
     };
-    $.ajax("/api/paladin" , {
-        type: "POST",
-        data: paladinName
-    }).then(function() {
-        console.log("Paladin created: " + paladinName);
-    });   
+    if (paladinName.name === null) {
+        console.log("Your character has to have a name.");
+        return;
+    } else {
+        $.ajax("/api/paladin" , {
+            type: "POST",
+            data: paladinName
+        }).then(function() {
+            console.log("Paladin created: " + paladinName);
+        });   
+    }
 });
 
 $("#cleric").on("click", function () {
