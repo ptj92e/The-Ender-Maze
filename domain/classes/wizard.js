@@ -6,7 +6,7 @@ class Wizard extends Character {
         super(name, level);
         this.intellect = 15 + (level * 2);
         this.strength = 8 + level;
-        this.agility = 8 + level;
+        this.agility = 8 + level; 
         this.stamina = 9 + level;
         this.speed = 10 + (level * 2);
         this.max_health = this.base_health + (this.stamina * 10);
