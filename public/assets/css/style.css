@@ -7,7 +7,7 @@ body {
 .container {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-style: solid;
     border-color: black;
@@ -151,4 +151,81 @@ input {
     margin: 5px;
     border-style: solid;
     border-color: white;
+}
+.charSelect {
+    list-style: none;
+    padding: 0px;
+    align-content: center;
+}
+.charSelect li {
+    margin-top: 15px;
+    padding: 5px;
+    margin: 5px;
+    background-color: black;
+    border-style: solid;
+    border-color: black;
+}
+.charSelect p {
+    color: white;
+    margin: 20px;
+}
+.charSelect img {
+    height: 60px;
+    width: 60px;
+}
+.charSelect a {
+    margin: 20px;
+    margin-left: 40px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    border: white;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.charSelect a:hover {
+    text-decoration: none;
+    color: black;
+}
+.combatChar {
+    background-color: black;
+    border-style: solid;
+    border-color: black;
+}
+.combatChar img {
+    height: 300px;
+    width: 300px;
+}
+.playerAttacks {
+    height: 200px;
+    overflow: scroll;
+}
+.playerAttacks ul {
+    list-style: none;
+    padding: 0px;
+    width: 375px;
+}
+.playerAttacks li {
+    margin-top: 15px;
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    text-align: center;
+    color: black;
+}
+.combatText {
+    height: 250px;
+    width: 355px;
+    background-color: black;
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+    overflow: scroll;
+}
+.combatText p {
+    margin: 5px;
+    padding: 0px;
+    font-size: 10px;
 }
