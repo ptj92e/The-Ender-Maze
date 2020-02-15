@@ -8,10 +8,10 @@
             "isCompleted": false,
             "text": "You take a step forward and you hear a loud creaking sound. What do you do?",
             "choices": {
-                "1": "Drop a boulder where you stepped.",
-                "2": "Quickly jump out of the way.",
-                "3": "Keep moving forward.",
-                "4": "Stand still and wait."
+                "one": "Drop a boulder where you stepped.",
+                "two": "Quickly jump out of the way.",
+                "three": "Keep moving forward.",
+                "four": "Stand still and wait."
             },
             "correctID": 1,
             "failed": "You fell into a pit a lost 20 hit points.",
@@ -40,10 +40,10 @@
             "isCompleted": false,
             "text": "You step into this room and a stone door closes behind you. On the door, you find this inscription: 'I weaken all men for hours each day. I show you strange visions while you are away. I take you by night, by day take you back, None suffer to have me, but do from my lack.'",
             "choices": {
-                "1": "Love",
-                "2": "Beer",
-                "3": "Sleep",
-                "4": "Hunger"
+                "one": "Love",
+                "two": "Beer",
+                "three": "Sleep",
+                "four": "Hunger"
             },
             "correctID": 3,
             "failed": "The room fills with gas and you lose 20 hit points.",
@@ -58,10 +58,10 @@
             "isCompleted": false,
             "text": "You hear a click and something speeding through the air. What do you do?",
             "choices": {
-                "1": "Jump as high as you can.",
-                "2": "Fall flat to the floor.",
-                "3": "Press yourself up against the wall.",
-                "4": "Run away."
+                "one": "Jump as high as you can.",
+                "two": "Fall flat to the floor.",
+                "three": "Press yourself up against the wall.",
+                "four": "Run away."
             },
             "correctID": 2,
             "failed": "You are hit with a poison dart. You lose 20 hit points.",
