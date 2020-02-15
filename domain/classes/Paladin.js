@@ -11,6 +11,7 @@ class Paladin extends Character {
         this.max_health = this.base_health + (this.stamina * 10);
         //think about adding weapon properties (damage, etc) so melee/basic attack damage can be calculated off of "weapon damage" instead of a static magic number
         this.weapon = "Zweihander";
+        this.class = "Paladin";
     }
 
     
