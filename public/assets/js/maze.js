@@ -163,7 +163,7 @@ $(document).keyup(function (e) {
 function typeCheck(encounter) {
     if ((encounter.type === "Puzzle") && (encounter.isCompleted === false)) {
         $.ajax("/puzzle", {
-            type: "GET"
+            type: "GET",
         }).then(function() {
             window.location.href = "/puzzle";
         });

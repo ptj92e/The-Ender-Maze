@@ -2,9 +2,29 @@
     <div class="row justify-content-center">
         <h1 class="text-center">Level 1</h1>
     </div>
-    <div class="row">
-        <canvas id="enderMaze" width="300" height="300"></canvas>
-        <canvas id="mazeFog" width="300" height="300"></canvas>
+    <div class="row justify-content-center">
+        <div class="mazeDiv">
+            <canvas id="enderMaze" width="300" height="300"></canvas>
+            <canvas id="mazeFog" width="300" height="300"></canvas>
+        </div>
+        <div>
+            <div class="row justify-content-center">
+                <h3 class="text-center">Character Name</h3>
+            </div>
+            <div class="row mazeChar">
+                <div class="col-6">
+                    <img src="/assets/images/Goblin.png">
+                </div>
+                <div class="col-6">
+                    <ul class="mazeStats">
+                        <li>Stamina:</li>
+                        <li>Strength:</li>
+                        <li>Intellect:</li>
+                        <li>Agility:</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row justify-content-center">
         <a href="/" class="storyButton" id="saveProgress">Save and Quit</a>

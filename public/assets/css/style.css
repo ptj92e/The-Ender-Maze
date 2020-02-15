@@ -99,12 +99,30 @@ input {
     color: black;
     text-decoration: none;
 }
+.mazeDiv {
+    height: 325px;
+    width: 450px;
+}
 #enderMaze {
-    margin-left: 75px;
+    margin-left: 30px;
 }
 #mazeFog {
     position: relative;
-    left: -300px;
+    left: 30px;
+    bottom: 306px;
+}
+.mazeStats {
+    list-style: none;
+    padding: 0px;
+    justify-content: center;
+}
+.mazeStats li {
+    margin-top: 20px;
+    text-align: center;
+}
+.mazeChar img {
+    height: 225px;
+    width: 225px;
 }
 .storyButton {
     margin-top: 20px;
@@ -119,4 +137,18 @@ input {
 .storyButton:hover {
     text-decoration: none;
     color: black;
+}
+.choices {
+    list-style: none;
+    padding: 0px;
+    align-content: center;
+}
+.choices li {
+    margin-top: 15px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-color: white;
 }
