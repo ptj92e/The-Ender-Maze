@@ -1,19 +1,15 @@
 const Wizard = require("../../../domain/classes/Wizard");
 const Paladin = require("../../../domain/classes/Paladin");
+const Enemy = require("../../../domain/classes/Enemy");
 
-let wizard1 = new Wizard("Minthel");
-let paladin1 = new Paladin("Lorash");
+let wizard1 = new Wizard("Minthel", 1);
+let paladin1 = new Paladin("Lorash", 1);
 
 console.log(wizard1);
 
 
 //just testing the castSpell function on something to see if the damage calculates correctly and updates the targets health correctly. Will actually have Enemy class thats created from a list of enemies, with stats being randomly generated based on user character level
-let enemy = {
-    name: "Goblin",
-    health: 100,
-    experience_value: 100,
-    speed: 10
-}
+let enemy = new Enemy("Goblin", wizard1);
 
 /**
  * Going to keep below statements in for combat simulation, need to figure out how to actually handle this on the front end, when attacks and such are selected from the menu

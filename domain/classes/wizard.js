@@ -11,6 +11,7 @@ class Wizard extends Character {
         this.speed = 10 + (level * 2);
         this.max_health = this.base_health + (this.stamina * 10);
         this.weapon = "Wizard Staff";
+        this.class = "Wizard";
     }
 
     /*This cast spell method will take in a spell(provided either by the default starting spells or the pulled table of spells that I will create later), and perform a switch statement to determine which spell has been taken in, and calculate the damage based on the spell parameter that is passed*/
