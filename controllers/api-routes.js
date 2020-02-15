@@ -15,8 +15,12 @@ api_router.get("/",  (req, res) => {
     res.render("welcome");
 });
 
-api_router.get("/characters", (req, res) => {
+api_router.get("/class", (req, res) => {
     res.render("class");
+});
+
+api_router.get("/characters", (req, res) => {
+    res.render("characters");
 });
 
 api_router.get("/paladin", (req, res) => {
