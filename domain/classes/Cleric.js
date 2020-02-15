@@ -11,6 +11,7 @@ class Cleric extends Character {
         this.max_health = this.base_health + (this.stamina * 10);
         //like the other classes, definitely work in weapon properties, so damage with melee skills/basic attacks can be calculated off of that, instead of the switch statement with static magic numbers
         this.weapon = "Mace";
+        this.class = "Cleric";
     }
 
     

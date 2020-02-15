@@ -13,6 +13,7 @@ class Rogue extends Character {
 
         //come back to this when there is time, consider giving weapons properties like damage and such, so the damage calculation with basic attack isnt just a static number, and can be calculated without a switch statements with cases for every weapon
         this.weapon = "Dirk";
+        this.class = "Rogue";
     }
 
     
