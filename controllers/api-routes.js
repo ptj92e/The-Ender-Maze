@@ -1,5 +1,5 @@
 let express = require("express");
-let router = express.Router();
+let api_router = express.Router();
 const db = require("../models");
 //requiring classes
 let Paladin = require("../domain/classes/Paladin");
@@ -9,31 +9,31 @@ let Rogue = require("../domain/classes/Rogue");
 //Sets the json object to a variable
 let level1 = require("../domain/story/level1.json");
 
-router.get("/",  (req, res) => {
+api-router.get("/",  (req, res) => {
     res.render("welcome");
 });
 
-router.get("/characters", (req, res) => {
+api-router.get("/characters", (req, res) => {
     res.render("class");
 });
 
-router.get("/paladin", (req, res) => {
+api-router.get("/paladin", (req, res) => {
     res.render("./characters/paladin");
 });
 
-router.get("/wizard", (req, res) => {
+api-router.get("/wizard", (req, res) => {
     res.render("./characters/wizard");
 });
 
-router.get("/cleric", (req, res) => {
+api-router.get("/cleric", (req, res) => {
     res.render("./characters/cleric");
 });
 
-router.get("/rogue", (req, res) => {
+api-router.get("/rogue", (req, res) => {
     res.render("./characters/rogue");
 });
 
-router.post("/api/paladin", (req, res) => {
+api-router.post("/api/paladin", (req, res) => {
     let paladin = new Paladin(req.body.name, 1);
     db.Hero.create(paladin).then((newHero) => {
 
@@ -41,11 +41,11 @@ router.post("/api/paladin", (req, res) => {
     });
 });
 
-router.get("/api/paladin", (req, res) => {
+api-router.get("/api/paladin", (req, res) => {
     //handle the findall request here, figure out a way to actually use the class object, so that the methods are usable, unsure if it will work
 });
 
-router.post("/api/cleric", (req, res) => {
+api-router.post("/api/cleric", (req, res) => {
     let cleric = new Cleric(req.body.name, 1);
     db.Hero.create(cleric).then((newHero) => {
 
@@ -53,7 +53,7 @@ router.post("/api/cleric", (req, res) => {
     });
 });
 
-router.post("/api/wizard", (req, res) => {
+api-router.post("/api/wizard", (req, res) => {
     let wizard = new Wizard(req.body.name, 1);
     db.Hero.create(wizard).then((newHero) => {
 
@@ -61,7 +61,7 @@ router.post("/api/wizard", (req, res) => {
     });
 });
 
-router.post("/api/rogue", (req, res) => {
+api-router.post("/api/rogue", (req, res) => {
     let rogue = new Rogue(req.body.name, 1);
     db.Hero.create(rogue).then((newHero) => {
 
@@ -69,12 +69,12 @@ router.post("/api/rogue", (req, res) => {
     });
 });
 
-router.get("/story", (req, res) => {
+api-router.get("/story", (req, res) => {
     res.render("story");
 });
 //route to get the encounter from the json object
-router.get("/api/encounter", (req, res) => {
+api-router.get("/api/encounter", (req, res) => {
     res.json(level1);
 });
 
-module.exports = router;
+module.exports = api_router;

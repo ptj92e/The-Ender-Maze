@@ -26,8 +26,10 @@ app.use(express.static("public"));
 require('dotenv').config();
 
 //requires api-routes for the server to use
-let routes = require("./controllers/api-routes");
-app.use(routes);
+let api_routes = require("./controllers/api-routes");
+let combat_routes = require("./controllers/combat-routes");
+app.use(api_routes);
+app.use(combat_routes);
 
 //sync database, then set server up
 db.sequelize.sync().then(function() {
