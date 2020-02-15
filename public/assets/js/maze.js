@@ -87,7 +87,7 @@ function draw() {
     var ctx = canvas[0].getContext('2d');
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, width, width);
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "grey";
     //Loop through the board array drawing the walls and the goal
     for (var y = 0; y < board.length; y++) {
         for (var x = 0; x < board[y].length; x++) {
@@ -133,12 +133,6 @@ function createFog() {
             }
         }
     }
-    //Drawing the character to the page
-    ctx.beginPath();
-    var half = blockSize / 2;
-    ctx.fillStyle = "blue";
-    ctx.arc(player.x * blockSize + half, player.y * blockSize + half, half, 0, 2 * Math.PI);
-    ctx.fill();
 }
 
 //Check to see if the new space is inside the board and not a wall
@@ -155,15 +149,58 @@ $(document).keyup(function (e) {
         player.x--;
     else if ((e.which == 39) && canMove(player.x + 1, player.y))
         player.x++;
-    //Runs the game function to change the values of the mazeFog object
+    //Runs the game function to render different encounters
     game();
+    //Sets the coordinate the player is on to 0
+    mazeFog[player.y][player.x] = 0;
+    //Redraws the fog to show the path the player has been on
+    createFog();
     //Redraws the maze to move the character
     draw();
     e.preventDefault();
 });
 
+function getEncounter(id) {
+    //Ajax call to retrieve information from the json object
+    $.ajax("/api/encounter",  {
+        type: "GET"
+    }).then(function(data) {
+        //loops over the json object
+        for (let i = 0; i < data.Encounters.length; i++) {
+            //if the id from the coordinates = the encounter id, the id is returned to be written to the handlebars
+            if (id === data.Encounters[i].id) {
+                console.log(data.Encounters[i]);
+            };
+        };
+    });
+};
+//This function checks the players coordinates and if they match the given parameters, the getEncounter function is called and returns information from the json object to render the encounters
 let game = function () {
-    mazeFog[player.y][player.x] = 0;
-    createFog();
+    if ((player.y === 2) && (player.x === 0)) {
+        let id = 1;
+        getEncounter(id);
+    } else if ((player.y === 8) && (player.x === 3)) {
+        let id = 2;
+        getEncounter(id);
+    } else if ((player.y === 7) && (player.x === 5)) {
+        let id = 3;
+        getEncounter(id);
+    } else if ((player.y === 3) && (player.x === 4)) {
+        let id = 4;
+        getEncounter(id);
+    } else if ((player.y === 1) && (player.x === 6)) {
+        let id = 5;
+        getEncounter(id);
+    } else if ((player.y === 5) && (player.x === 7)) {
+        let id = 6;
+        getEncounter(id);
+    } else if ((player.y === 5) && (player.x === 9)) {
+        let id = 7;
+        getEncounter(id);
+    } else if ((player.y === 9) && (player.x === 9)) {
+        let id = 8;
+        getEncounter(id);
+    }
 }
+
 draw();
