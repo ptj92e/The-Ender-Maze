@@ -73,6 +73,7 @@ api_router.post("/api/rogue", (req, res) => {
 });
 
 api_router.get("/maze", (req, res) => {
+    //add id parameter for me to perform a findOne where id = param.id, so i can pump values into the maze handlebars for stats and name
     res.render("maze");
 });
 //route to get the encounter from the json object
