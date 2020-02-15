@@ -8,6 +8,8 @@ let Wizard = require("../domain/classes/wizard");
 let Rogue = require("../domain/classes/Rogue");
 //Sets the json object to a variable
 let level1 = require("../domain/story/level1.json");
+//requiring fs to rewrite the json file
+let fs = require("fs");
 
 router.get("/",  (req, res) => {
     res.render("welcome");
@@ -89,12 +91,28 @@ router.get("/api/encounter/:id", (req, res) => {
     };
 });
 
-router.get("/puzzle", (req, res) => {
-    res.render("puzzle");
+router.get("/puzzle/:id", (req, res) => {
+    let encounter = [];
+    for (let i = 0; i < level1.Encounters.length; i++) {
+        if (level1.Encounters[i].id === parseInt(req.params.id)) {
+            encounter = level1.Encounters[i];
+        }
+    };
+    res.render("puzzle", { encounter: encounter });
 });
 
-router.get("/combat", (req, res) => {
+router.get("/combat/:id", (req, res) => {
     res.render("combat");
+});
+
+router.get("/api/completed/:id", (req, res) => {
+    let encounter = [];
+    for (let i = 0; i < level1.Encounters.length; i++) {
+        if (level1.Encounters[i].id === parseInt(req.params.id)) {
+            encounter = level1.Encounters[i];
+        }
+    };
+    console.log(encounter);
 });
 
 module.exports = router;
