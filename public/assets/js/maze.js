@@ -74,7 +74,7 @@ let mazeFog = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-]
+];
 //creating the characer's starting position
 let player = {
     x: 0,
@@ -115,7 +115,8 @@ function draw() {
     ctx.arc(player.x * blockSize + half, player.y * blockSize + half, half, 0, 2 * Math.PI);
     ctx.fill();
     createFog();
-}
+
+};
 
 function createFog() {
     var width = fog.width();
@@ -133,12 +134,12 @@ function createFog() {
             }
         }
     }
-}
+};
 
 //Check to see if the new space is inside the board and not a wall
 function canMove(x, y) {
     return (y >= 0) && (y < board.length) && (x >= 0) && (x < board[y].length) && (board[y][x] != 1);
-}
+};
 //Key up events to change the position of the character. 
 $(document).keyup(function (e) {
     if ((e.which == 38) && canMove(player.x, player.y - 1))//Up arrow
@@ -159,48 +160,24 @@ $(document).keyup(function (e) {
     draw();
     e.preventDefault();
 });
-
-function typeCheck(encounter) {
-    if ((encounter.type === "Puzzle") && (encounter.isCompleted === false)) {
-        $.ajax("/puzzle", {
-            type: "GET",
-        }).then(function() {
-            window.location.href = "/puzzle";
-        });
-    } else if (encounter.type === "Puzzle") {
-        console.log("Puzzle Complete");
-    } else if ((encounter.type === "Combat") && (encounter.isCompleted === false)) {
-        $.ajax("/puzzle", {
-            type: "GET"
-        }).then(function() {
-            window.location.href = "/combat";
-        });
-    } else if (encounter.type === "Combat") {
-        console.log("Combat Complete"); 
-    } else if (encounter.type === "Level Complete") {
-        console.log("You did it!");
-    }
-};
-
 //This gets the encounter information from the JSON file
 function getEncounter(id) {
     //Ajax call to retrieve information from the json object
-    $.ajax("/api/encounter",  {
+    $.ajax("/api/encounter/" + id, {
         type: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
         //loops over the json object
-        let encounter = [];
-        for (let i = 0; i < data.Encounters.length; i++) {
-            //if the id from the coordinates = the encounter id, the id is returned to be written to the handlebars
-            if (id === data.Encounters[i].id) {
-                encounter = data.Encounters[i];
-            };
-        };
-        typeCheck(encounter);
+        if (data.type === "Puzzle") {
+            window.location.href = "/puzzle";
+        } else if (data.type === "Combat") {
+            window.location.href = "/combat";
+        } else if (data.type === "Level Complete") {
+            console.log("You did it!");
+        }
     });
 };
 //This function checks the players coordinates and if they match the given parameters, the getEncounter function is called and returns information from the json object to render the encounters
-let game = function () {
+function game() {
     if ((player.y === 2) && (player.x === 0)) {
         let id = 1;
         getEncounter(id);
@@ -226,6 +203,6 @@ let game = function () {
         let id = 8;
         getEncounter(id);
     }
-}
+};
 
 draw();

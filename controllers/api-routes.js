@@ -73,8 +73,20 @@ router.get("/maze", (req, res) => {
     res.render("maze");
 });
 //route to get the encounter from the json object
-router.get("/api/encounter", (req, res) => {
-    res.json(level1);
+router.get("/api/encounter/:id", (req, res) => {
+    let encounter = [];
+    for (let i = 0; i < level1.Encounters.length; i++) {
+        if (level1.Encounters[i].id === parseInt(req.params.id)) {
+            encounter = level1.Encounters[i];
+        }
+    };
+    if ((encounter.type === "Puzzle") && (encounter.isCompleted === false)) {
+        res.json(encounter);
+    } else if ((encounter.type === "Combat") && (encounter.isCompleted === false)) {
+        res.json(encounter);
+    } else if (encounter.type === "Level Complete") {
+        res.json(encounter);
+    };
 });
 
 router.get("/puzzle", (req, res) => {
