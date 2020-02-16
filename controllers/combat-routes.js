@@ -10,7 +10,9 @@ let Rogue = require("../domain/classes/Rogue");
 
 combat_router.get("/combat", (req, res) => {
     res.render("combat");
-})
+});
 
-module.exports = combat-router;
+
+
+module.exports = combat_router;
 

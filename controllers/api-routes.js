@@ -20,7 +20,11 @@ api_router.get("/class", (req, res) => {
 });
 
 api_router.get("/characters", (req, res) => {
-    res.render("characters");
+
+    db.Hero.findAll({raw: true}).then(data => {
+        console.log(data);
+        res.render("characters", {characters: data});
+    })
 });
 
 api_router.get("/paladin", (req, res) => {
@@ -41,7 +45,11 @@ api_router.get("/rogue", (req, res) => {
 
 api_router.post("/api/paladin", (req, res) => {
     let paladin = new Paladin(req.body.name, 1);
-    db.Hero.create(paladin).then((newHero) => {
+    db.Hero.create({
+        name: paladin.name,
+        level: paladin.level, 
+        class: paladin.class
+    }).then((newHero) => {
 
         res.json(newHero);
     });
@@ -53,7 +61,11 @@ api_router.get("/api/paladin", (req, res) => {
 
 api_router.post("/api/cleric", (req, res) => {
     let cleric = new Cleric(req.body.name, 1);
-    db.Hero.create(cleric).then((newHero) => {
+    db.Hero.create({
+        name: cleric.name,
+        level: cleric.level,
+        class: cleric.class
+    }).then((newHero) => {
 
         res.json(newHero);
     });
@@ -62,7 +74,11 @@ api_router.post("/api/cleric", (req, res) => {
 
 api_router.post("/api/wizard", (req, res) => {
     let wizard = new Wizard(req.body.name, 1);
-    db.Hero.create(wizard).then((newHero) => {
+    db.Hero.create({
+        name: wizard.name,
+        level: wizard.level,
+        class: wizard.class
+    }).then((newHero) => {
 
         res.json(newHero);
     });
@@ -70,7 +86,11 @@ api_router.post("/api/wizard", (req, res) => {
 
 api_router.post("/api/rogue", (req, res) => {
     let rogue = new Rogue(req.body.name, 1);
-    db.Hero.create(rogue).then((newHero) => {
+    db.Hero.create({
+        name: rogue.name,
+        level: rogue.level,
+        class: rogue.class
+    }).then((newHero) => {
 
         res.json(newHero);
     });

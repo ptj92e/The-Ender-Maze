@@ -30,7 +30,7 @@ let api_routes = require("./controllers/api-routes");
 let combat_routes = require("./controllers/combat-routes");
 app.use(api_routes);
 app.use(combat_routes);
-app.use(api_routes);
+
 
 //sync database, then set server up
 db.sequelize.sync().then(function() {
