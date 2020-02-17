@@ -63,9 +63,17 @@ p {
     color: black;
     text-decoration: none;
 }
+.classImg {
+    height: 250px;
+    width: 250px;
+}
 li {
     font-family: 'Press Start 2P', cursive;
     color: white;
+}
+.nameInput {
+    margin-left: 75px;
+    margin-right: 75px;
 }
 .create {
     font-family: 'Press Start 2P', cursive;
