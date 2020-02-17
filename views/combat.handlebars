@@ -3,13 +3,24 @@
     <div class="row">
         <div class="col-4 combatChar">
             <div class="row justify-content-center">
-                <p>Character Name</p>
+                <p>{{name}}</p>
             </div>
             <div class="row justify-content-center">
-                <img src="/assets/images/Goblin.png">
+                {{#compare class "==" "Wizard"}}
+                    <img src="/assets/images/NewWizard.png">
+                {{/compare}}
+                {{#compare class "==" "Paladin"}}
+                    <img src="/assets/images/Paladin.png">
+                {{/compare}}
+                {{#compare class "==" "Rogue"}}
+                    <img src="/assets/images/Rogue.png">
+                {{/compare}}
+                {{#compare class "==" "Cleric"}}
+                    <img src="/assets/images/Cleric.png">
+                {{/compare}}
             </div>
             <div class="row justify-content-center">
-                <p>Health Goes Here</p>
+                <p>{{max_health}}</p>
             </div>
         </div>
         <div class="col-4">
@@ -53,6 +64,6 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <a href="/maze" class="storyButton" id="continueGame" hidden>Continue</a>
+        <a href="/maze/{{id}}" class="storyButton" id="continueGame" hidden>Continue</a>
     </div>
 </div>

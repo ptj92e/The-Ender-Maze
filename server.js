@@ -1,6 +1,7 @@
 //import express to stand up the server
 const express = require("express");
 const exphbs = require("express-handlebars");
+const helpers = require("handlebars-helpers")();
 
 //invoke express into app so that we can set the server and middleware up
 const app = express();
@@ -27,7 +28,10 @@ require('dotenv').config();
 
 //requires api-routes for the server to use
 let api_routes = require("./controllers/api-routes");
+let combat_routes = require("./controllers/combat-routes");
 app.use(api_routes);
+app.use(combat_routes);
+
 
 //sync database, then set server up
 db.sequelize.sync().then(function() {
