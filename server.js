@@ -1,6 +1,7 @@
 //import express to stand up the server
 const express = require("express");
 const exphbs = require("express-handlebars");
+const helpers = require("handlebars-helpers")();
 
 //invoke express into app so that we can set the server and middleware up
 const app = express();

@@ -101,6 +101,7 @@ $(document).keyup(function (e) {
     else if ((e.which == 39) && canMove(player.x + 1, player.y))
         player.x++;
     //Runs the game function to render different encounters
+    
     game();
     //Sets the coordinate the player is on to 0
     mazeFog[player.y][player.x] = 0;

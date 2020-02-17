@@ -22,7 +22,7 @@ api_router.get("/class", (req, res) => {
 api_router.get("/characters", (req, res) => {
 
     db.Hero.findAll({raw: true}).then(data => {
-        console.log(data);
+        
         res.render("characters", {characters: data});
     })
 });
@@ -96,10 +96,49 @@ api_router.post("/api/rogue", (req, res) => {
     });
 });
 
-api_router.get("/maze", (req, res) => {
+api_router.get("/maze/:id", (req, res) => {
     //add id parameter for me to perform a findOne where id = param.id, so i can pump values into the maze handlebars for stats and name
-    res.render("maze");
+    let id = req.params.id;
+    db.Hero.findOne({
+        raw: true, 
+        where: {
+            id: id
+        }
+    }).then(character => {
+        console.log(character);
+        switch(character.class){
+            case "Wizard": {
+                let wizard = new Wizard(character.name, character.level);
+                res.render("maze", {hero: wizard, character: character}
+                ); 
+            }
+            break;
+
+            case "Rogue": {
+                let rogue = new Rogue(character.name, character.level);
+                res.render("maze", {hero: rogue, character: character});
+            }
+            break;
+
+            case "Paladin": {
+                let paladin = new Paladin(character.name, character.level);
+                res.render("maze", {hero: paladin, character: character});
+            }
+            break;
+
+            case "Cleric": {
+                let cleric = new Cleric(character.name, character.level);
+                res.render("maze", {hero: cleric, character: character});
+            }
+            break;
+
+            default :{
+                res.render("maze");
+            }
+        }
+    });
 });
+
 //route to get the encounter from the json object
 api_router.get("/api/encounter/:id", (req, res) => {
     let encounter = [];
@@ -117,19 +156,20 @@ api_router.get("/api/encounter/:id", (req, res) => {
     };
 });
 
-api_router.get("/puzzle/:id", (req, res) => {
-    let encounter = [];
+api_router.get("/puzzle/:id&:character_id", (req, res) => {
+    let character_id = req.params.character_id;
+    console.log(character_id);
+    let puzzle = [];
     for (let i = 0; i < level1.Encounters.length; i++) {
         if (level1.Encounters[i].id === parseInt(req.params.id)) {
-            encounter = level1.Encounters[i];
+            puzzle = level1.Encounters[i];
         }
     };
-    res.render("puzzle", { encounter: encounter });
+    res.render("puzzle", { encounter: {puzzle, character_id}});
+    
 });
 
-api_router.get("/combat/:id", (req, res) => {
-    res.render("combat");
-});
+
 
 api_router.get("/api/completed/:id", (req, res) => {
     let encounter = [];

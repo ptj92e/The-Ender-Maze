@@ -48,14 +48,17 @@ $("#wizard").on("click", function () {
 });
 //This gets the encounter information from the JSON file
 function getEncounter(id) {
+    //get id for character
+    let character_id = $(".mazeChar").data("id");
+    console.log("This is from getEncounter " + character_id);
     //Ajax call to retrieve information from the json object
     $.ajax("/api/encounter/" + id, {
         type: "GET"
     }).then(function (data) {
         if (data.type === "Puzzle") {
-            window.location.href = "/puzzle/" + id;
+            window.location.href = "/puzzle/" + id + "&" + character_id;
         } else if (data.type === "Combat") {
-            window.location.href = "/combat/" + id;
+            window.location.href = "/combat/" + character_id;
         } else if (data.type === "Level Complete") {
             console.log("You did it!");
         }
@@ -65,6 +68,7 @@ function getEncounter(id) {
 function game() {
     if ((player.y === 2) && (player.x === 0)) {
         let id = 1;
+        
         getEncounter(id);
     } else if ((player.y === 8) && (player.x === 3)) {
         let id = 2;
@@ -119,3 +123,4 @@ function changeCompleted(id) {
         console.log("You completed this task.");
     });
 };
+

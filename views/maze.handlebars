@@ -9,18 +9,29 @@
         </div>
         <div>
             <div class="row justify-content-center">
-                <h3 class="text-center">Character Name</h3>
+                <h3 class="text-center">{{hero.name}}</h3>
             </div>
-            <div class="row mazeChar">
+            <div class="row mazeChar" data-id={{character.id}}>
                 <div class="col-6">
-                    <img src="/assets/images/Goblin.png">
+                    {{#compare hero.class "==" "Wizard"}}
+                        <img src="/assets/images/NewWizard.png">
+                    {{/compare}}
+                    {{#compare hero.class "==" "Paladin"}}
+                        <img src="/assets/images/Paladin.png">
+                    {{/compare}}
+                    {{#compare hero.class "==" "Rogue"}}
+                        <img src="/assets/images/Rogue.png">
+                    {{/compare}}
+                    {{#compare hero.class "==" "Cleric"}}
+                        <img src="/assets/images/Cleric.png">
+                    {{/compare}}
                 </div>
                 <div class="col-6">
                     <ul class="mazeStats">
-                        <li>Stamina:</li>
-                        <li>Strength:</li>
-                        <li>Intellect:</li>
-                        <li>Agility:</li>
+                        <li>Stamina: {{hero.stamina}}</li>
+                        <li>Strength: {{hero.strength}}</li>
+                        <li>Intellect: {{hero.intellect}}</li>
+                        <li>Agility: {{hero.agility}}</li>
                     </ul>
                 </div>
             </div>
