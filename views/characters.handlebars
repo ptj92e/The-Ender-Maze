@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container characterDiv">
     <div class="row justify-content-center">
         <h1 class="text-center">Choose Your Character</h1>
     </div>
@@ -6,36 +6,30 @@
         <div class="col-5">
             <ul class="charSelect">
                 {{#each characters}}
-                    
-                    <li>
-                        <div class="row" data-id={{id}} data-name={{name}} data-level={{level}}>
-                            <p class="align-self-center">{{id}}</p>
-                            {{#compare class "==" "Wizard"}}
-                                <img src="/assets/images/NewWizard.png">
-                            {{/compare}}
-                            {{#compare class "==" "Paladin"}}
-                                <img src="/assets/images/Paladin.png">
-                            {{/compare}}
-                            {{#compare class "==" "Rogue"}}
-                                <img src="/assets/images/Rogue.png">
-                            {{/compare}}
-                            {{#compare class "==" "Cleric"}}
-                                <img src="/assets/images/Cleric.png">
-                            {{/compare}}
-
-                            <div>
-                                <div class="row">
-                                    <a href="/maze/{{id}}">{{name}}</a>
-                                    <p>Level: {{level}}</p>
-                                
-                                </div>
-                            </div>
+                <li>
+                    <div class="row" data-id={{id}} data-name={{name}} data-level={{level}}>
+                        <p class="align-self-center">{{id}}</p>
+                        {{#compare class "==" "Wizard"}}
+                        <img class="align-self-center" src="/assets/images/NewWizard.png">
+                        {{/compare}}
+                        {{#compare class "==" "Paladin"}}
+                        <img class="align-self-center" src="/assets/images/Paladin.png">
+                        {{/compare}}
+                        {{#compare class "==" "Rogue"}}
+                        <img class="align-self-center" src="/assets/images/Rogue.png">
+                        {{/compare}}
+                        {{#compare class "==" "Cleric"}}
+                        <img class="align-self-center" src="/assets/images/Cleric.png">
+                        {{/compare}}
+                        <div class="justify-content-center">
+                            <p class="text-center">Level: {{level}}</p>
+                            <a href="/maze/{{id}}">{{name}}</a>
                         </div>
-                    </li>
-                    
+                    </div>
+                </li>
                 {{/each}}
             </ul>
         </div>
-        
+
     </div>
 </div>
