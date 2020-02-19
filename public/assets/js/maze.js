@@ -60,7 +60,7 @@ function getEncounter(id) {
         } else if (data.type === "Combat") {
             window.location.href = "/combat/" + character_id;
         } else if (data.type === "Level Complete") {
-            console.log("You did it!");
+            window.location.href = "/newlevel/" + id;
         }
     });
 };
@@ -68,7 +68,6 @@ function getEncounter(id) {
 function game() {
     if ((player.y === 2) && (player.x === 0)) {
         let id = 1;
-        
         getEncounter(id);
     } else if ((player.y === 8) && (player.x === 3)) {
         let id = 2;

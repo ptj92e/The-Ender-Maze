@@ -88,11 +88,7 @@
             "x": 9,
             "type": "Level Complete",
             "isCompleted": false,
-            "text": "You have completed level 1. Continue to level 2...if you dare.",
-            "choices": {
-                "1": "Continue",
-                "2": "Save and Quit"
-            }
+            "text": "You have completed level 1. Continue to level 2...if you dare."
         }
     ]
 }
