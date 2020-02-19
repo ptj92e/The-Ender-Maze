@@ -111,4 +111,5 @@ $(document).keyup(function (e) {
     draw();
     e.preventDefault();
 });
+
 draw();
