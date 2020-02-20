@@ -5,7 +5,7 @@ const axios = require("axios");
 module.exports = {
     random_enemy_array: async function(){
         
-        await axios.get("http://dnd5eapi.co/api/monsters").then(data => {
+       return await axios.get("http://dnd5eapi.co/api/monsters").then(data => {
             const enemy_names = [];
             const name_data = data.data.results;
             // for(let i=0;i<data.data.results.length; i++){
@@ -17,7 +17,7 @@ module.exports = {
             });
             console.log(enemy_names);
             
-            return new_enemy_array;
+            return enemy_array;
         });
     }
 }
