@@ -4,3 +4,14 @@ const axios = require("axios");
 const enemy_names = [];
 
 
+axios.get("http://dnd5eapi.co/api/monsters").then(data => {
+    
+    for(let i=0;i<data.data.results.length; i++){
+
+        enemy_names.push(data.data.results[i].name);
+    }
+    
+    module.exports = enemy_names;
+});
+
+

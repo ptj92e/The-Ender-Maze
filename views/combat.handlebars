@@ -26,12 +26,30 @@
         <div class="col-4">
             <div class="row playerAttacks">
                 <ul>
-                    <li>Attack 1</li>
-                    <li>Attack 2</li>
-                    <li>Attack 3</li>
-                    <li>Attack 4</li>
-                    <li>Attack 5</li>
-                    <li>Attack 6</li>
+                    {{#compare class "==" "Wizard"}}
+                        <li>Basic Attack</li>
+                        <li>Fireball</li>
+                        <li>Frostbolt</li>
+                        
+                    {{/compare }}
+                    {{#compare class "==" "Paladin"}}
+                        
+                        <li>Basic Attack</li>
+                        <li>Judgement</li>
+                        <li>Heaven's Fist</li>
+                        
+                    {{/compare }}
+                    {{#compare class "==" "Rogue"}}
+                        <li>Basic Attack</li>
+                        <li>Shiv</li>
+                        
+                    {{/compare }}
+                    {{#compare class "==" "Cleric"}}
+                        <li>Basic Attack</li>
+                        <li>Holy Fire</li>
+                    
+                    {{/compare }}
+
                 </ul>
             </div>
             <div class="row">
