@@ -14,3 +14,7 @@ rand_enemy.then(result => {
     enemy_name = result[Math.floor(Math.random() * result.length)];
     console.log(enemy_name);
 });
+
+module.exports = {
+    getRandomEnemy = await getRandomEnemy
+}

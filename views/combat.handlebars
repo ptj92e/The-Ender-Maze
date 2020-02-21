@@ -3,48 +3,48 @@
     <div class="row">
         <div class="col-4 combatChar">
             <div class="row justify-content-center">
-                <p>{{name}}</p>
+                <p>{{hero.name}}</p>
             </div>
             <div class="row justify-content-center">
-                {{#compare class "==" "Wizard"}}
+                {{#compare hero.class "==" "Wizard"}}
                     <img src="/assets/images/NewWizard.png">
                 {{/compare}}
-                {{#compare class "==" "Paladin"}}
+                {{#compare hero.class "==" "Paladin"}}
                     <img src="/assets/images/Paladin.png">
                 {{/compare}}
-                {{#compare class "==" "Rogue"}}
+                {{#compare hero.class "==" "Rogue"}}
                     <img src="/assets/images/Rogue.png">
                 {{/compare}}
-                {{#compare class "==" "Cleric"}}
+                {{#compare hero.class "==" "Cleric"}}
                     <img src="/assets/images/Cleric.png">
                 {{/compare}}
             </div>
             <div class="row justify-content-center">
-                <p>{{max_health}}</p>
+                <p>{{hero.max_health}}</p>
             </div>
         </div>
         <div class="col-4">
             <div class="row playerAttacks">
                 <ul>
-                    {{#compare class "==" "Wizard"}}
+                    {{#compare hero.class "==" "Wizard"}}
                         <li>Basic Attack</li>
                         <li>Fireball</li>
                         <li>Frostbolt</li>
                         
                     {{/compare }}
-                    {{#compare class "==" "Paladin"}}
+                    {{#compare hero.class "==" "Paladin"}}
                         
                         <li>Basic Attack</li>
                         <li>Judgement</li>
                         <li>Heaven's Fist</li>
                         
                     {{/compare }}
-                    {{#compare class "==" "Rogue"}}
+                    {{#compare hero.class "==" "Rogue"}}
                         <li>Basic Attack</li>
                         <li>Shiv</li>
                         
                     {{/compare }}
-                    {{#compare class "==" "Cleric"}}
+                    {{#compare hero.class "==" "Cleric"}}
                         <li>Basic Attack</li>
                         <li>Holy Fire</li>
                     
@@ -71,13 +71,13 @@
         </div>
         <div class="col-4 combatChar">
             <div class="row justify-content-center">
-                <p>Character Name</p>
+                <p>{{enemy.name}}</p>
             </div>
             <div class="row justify-content-center">
                 <img src="/assets/images/Goblin.png">
             </div>
             <div class="row justify-content-center">
-                <p>Health Goes Here</p>
+                <p>{{enemy.health}}</p>
             </div>
         </div>
     </div>
