@@ -8,8 +8,6 @@ let Wizard = require("../domain/classes/wizard");
 let Rogue = require("../domain/classes/Rogue");
 //Sets the json object to a variable
 let level1 = require("../domain/story/level1.json");
-//requiring fs to rewrite the json file
-let fs = require("fs");
 
 api_router.get("/", (req, res) => {
     res.render("welcome");
@@ -105,7 +103,6 @@ api_router.get("/maze/:id", (req, res) => {
             id: id
         }
     }).then(character => {
-        console.log(character);
         switch (character.class) {
             case "Wizard": {
                 let wizard = new Wizard(character.name, character.level);
@@ -158,7 +155,6 @@ api_router.get("/api/encounter/:id", (req, res) => {
 
 api_router.get("/puzzle/:id&:character_id", (req, res) => {
     let character_id = req.params.character_id;
-    console.log(character_id);
     let puzzle = [];
     for (let i = 0; i < level1.Encounters.length; i++) {
         if (level1.Encounters[i].id === parseInt(req.params.id)) {
@@ -197,6 +193,17 @@ api_router.put("/api/resetMaze", (req, res) => {
         encounter.isCompleted = false;
     }
     res.json(encounter);
-})
+});
+
+api_router.delete("/api/delete/:id", (req, res) => {
+    let id = req.params.id;
+    db.Hero.destroy({
+        where: {
+            id: id
+        }
+    }).then(function(hero) {
+        res.json(hero);
+    });
+});
 
 module.exports = api_router;

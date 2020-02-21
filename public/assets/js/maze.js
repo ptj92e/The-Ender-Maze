@@ -7,7 +7,6 @@ $("#paladin").on("click", function () {
         type: "POST",
         data: paladinName
     }).then(function () {
-        console.log("Paladin created: " + paladinName);
         window.location.href = "/characters";
         
     });
@@ -21,7 +20,6 @@ $("#cleric").on("click", function () {
         type: "POST",
         data: clericName
     }).then(function () {
-        console.log("Cleric created: " + clericName);
         window.location.href = "/characters";
        
     });
@@ -35,7 +33,6 @@ $("#rogue").on("click", function () {
         type: "POST",
         data: rogueName
     }).then(function () {
-        console.log("Rogue created: " + rogueName);
         window.location.href = "/characters";
        
     });
@@ -49,7 +46,6 @@ $("#wizard").on("click", function () {
         type: "POST",
         data: wizardName
     }).then(function () {
-        console.log("Wizard created: " + wizardName);
         window.location.href = "/characters";
         
     });
@@ -58,7 +54,6 @@ $("#wizard").on("click", function () {
 function getEncounter(id) {
     //get id for character
     let character_id = $(".mazeChar").data("id");
-    console.log("This is from getEncounter " + character_id);
     //Ajax call to retrieve information from the json object
     $.ajax("/api/encounter/" + id, {
         type: "GET"
@@ -127,7 +122,7 @@ function changeCompleted(id) {
     $.ajax("/api/completed/" + id, {
         type: "GET"
     }).then(function() {
-        console.log("You completed this task.");
+
     });
 };
 
@@ -139,6 +134,15 @@ $(".startMaze").click((event) => {
     }).then(() => {
     
     });
+});
 
+$(".deleteButton").click((event) => {
+    let id = $(event.target).data("id");
+    $.ajax("/api/delete/" + id, {
+        type: "DELETE"   
+    }).then(function() {
+        console.log("Character Deleted at id: " + id);
+        location.reload();
+    });
 });
 

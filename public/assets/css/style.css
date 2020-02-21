@@ -165,6 +165,7 @@ input {
     overflow: scroll;
 }
 .charSelect {
+    width: 800px;
     list-style: none;
     padding: 0px;
     align-content: center;
@@ -173,6 +174,7 @@ input {
     margin-top: 15px;
     padding: 5px;
     margin: 5px;
+    width: 100%;
     background-color: black;
     border-style: solid;
     border-color: black;
@@ -197,6 +199,10 @@ input {
     text-decoration: none;
     color: black;
 }
+.deleteButton {
+    height: 32px;
+    margin: auto;
+}
 .combatChar {
     background-color: black;
     border-style: solid;
@@ -219,6 +225,7 @@ input {
     margin-top: 15px;
     padding: 5px;
     margin: 10px;
+    width: 100%;
     background-color: white;
     border-style: solid;
     border-color: white;
@@ -238,6 +245,12 @@ input {
     margin: 5px;
     padding: 0px;
     font-size: 10px;
+}
+.myAttack {
+    color: green;
+}
+.theirAttack {
+    color: red;
 }
 .newLevelButton {
     height: 32px;
