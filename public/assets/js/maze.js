@@ -66,7 +66,7 @@ function getEncounter(id) {
         if (data.type === "Puzzle") {
             window.location.href = "/puzzle/" + id + "&" + character_id;
         } else if (data.type === "Combat") {
-            window.location.href = "/combat/" + character_id;
+            window.location.href = "/combat/" + character_id + "&" + id;
         } else if (data.type === "Level Complete") {
             window.location.href = "/newlevel/" + id;
         }
