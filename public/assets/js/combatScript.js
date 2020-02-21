@@ -1,15 +1,19 @@
 $(".melee").click( () => {
+    let enemy_health = parseInt($(".enemy-health").text());
+    let player_health = parseInt($(".player-health").text());
     let player_damage = 10;
     let enemy_damage = 5;
     let player_attacked = true;
-    let enemy_health = parseInt($(".enemy-health").text());
     let enemy_name = $(".enemy-name").text();
-    let player_health = parseInt($(".player-health").text());
     
     
     
 
-        if(player_attacked){
+    if(player_damage >= enemy_health){
+        enemy_health = 0;
+        $(".enemy-health").text(enemy_health);
+    }
+     else if(player_attacked){
     
             enemy_health -= player_damage;
         
@@ -18,7 +22,7 @@ $(".melee").click( () => {
             $(".combatText").prepend(`<p class="myAttack">You do ${player_damage} damage to ${enemy_name}</p>`);
             
             player_attacked = false;
-    
+            
         }
         
             
@@ -49,8 +53,11 @@ $(".spell").click( () => {
     
     
 
-        if(player_attacked){
-    
+    if(player_damage >= enemy_health){
+        enemy_health = 0;
+        $(".enemy-health").text(enemy_health);
+    }
+    else if(player_attacked){
             enemy_health -= player_damage;
         
             $(".enemy-health").text(enemy_health);
@@ -89,3 +96,4 @@ function changeCompleted(id) {
         
     });
 };
+
