@@ -1,4 +1,4 @@
-const Character = require("./Character");
+const Character = require("./character");
 
 class Paladin extends Character {
     constructor(name, level){
