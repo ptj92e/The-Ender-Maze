@@ -44,21 +44,21 @@ combat_router.get("/combat/:id&:encounter_id", (req, res) => {
                 case "Rogue": {
                     let rogue = new Rogue(character.name, character.level);
                     let enemy = new Enemy(enemy_name, rogue);
-                    res.render("combat", {character: id, hero: rogue, enemy: enemy, encounter: encounter_id}); 
+                    res.render("combat", {id: id, hero: rogue, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
                 case "Paladin": {
                     let paladin = new Paladin(character.name, character.level);
                     let enemy = new Enemy(enemy_name, paladin);
-                    res.render("combat", {character: id, hero: paladin, enemy: enemy, encounter: encounter_id}); 
+                    res.render("combat", {id: id, hero: paladin, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
                 case "Cleric": {
                     let cleric = new Cleric(character.name, character.level);
                     let enemy = new Enemy(enemy_name, cleric);
-                    res.render("combat", {character: id, hero: cleric, enemy: enemy, encounter: encounter_id}); 
+                    res.render("combat", {id: id, hero: cleric, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
