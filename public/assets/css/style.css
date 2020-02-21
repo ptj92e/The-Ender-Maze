@@ -67,7 +67,7 @@ p {
     height: 250px;
     width: 250px;
 }
-li {
+li, button{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
@@ -215,7 +215,7 @@ input {
     padding: 0px;
     width: 375px;
 }
-.playerAttacks li {
+.playerAttacks button {
     margin-top: 15px;
     padding: 5px;
     margin: 10px;
