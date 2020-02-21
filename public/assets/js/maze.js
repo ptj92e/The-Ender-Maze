@@ -131,3 +131,14 @@ function changeCompleted(id) {
     });
 };
 
+$("#startMaze").click((event) => {
+    let isCompleted = false;
+    $.ajax("/api/resetMaze", {
+        type: "PUT",
+        data: isCompleted
+    }).then(() => {
+    
+    });
+
+});
+

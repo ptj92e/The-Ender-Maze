@@ -190,4 +190,10 @@ api_router.get("/newlevel/:id", (req, res) => {
     res.render("complete", { encounter: encounter });
 });
 
+api_router.put("/api/resetMaze", (req, res) => {
+    for(let i = 0; i < level1.Encounters.length; i++){
+        level1.Encounters[i].isCompleted = req.body;
+    }
+})
+
 module.exports = api_router;
