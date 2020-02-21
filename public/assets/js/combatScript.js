@@ -15,7 +15,7 @@ $(".melee").click( () => {
         
             $(".enemy-health").text(enemy_health);
         
-            $(".combatText").prepend(`<p>You do ${player_damage} damage to ${enemy_name}</p>`);
+            $(".combatText").prepend(`<p class="myAttack">You do ${player_damage} damage to ${enemy_name}</p>`);
             
             player_attacked = false;
     
@@ -28,7 +28,7 @@ $(".melee").click( () => {
     
             $(".player-health").text(player_health);
             
-            $(".combatText").prepend(`"\n"<p>${enemy_name} does ${enemy_damage} damage to you.</p>`);
+            $(".combatText").prepend(`"\n"<p class="theirAttack">${enemy_name} does ${enemy_damage} damage to you.</p>`);
             player_attacked = false;
         }
 
@@ -55,7 +55,7 @@ $(".spell").click( () => {
         
             $(".enemy-health").text(enemy_health);
         
-            $(".combatText").prepend(`<p>You do ${player_damage} damage to ${enemy_name}</p>`);
+            $(".combatText").prepend(`<p class="myAttack">You do ${player_damage} damage to ${enemy_name}</p>`);
             
             player_attacked = false;
     
@@ -68,7 +68,7 @@ $(".spell").click( () => {
     
             $(".player-health").text(player_health);
             
-            $(".combatText").prepend(`"\n"<p>${enemy_name} does ${enemy_damage} damage to you.</p>`);
+            $(".combatText").prepend(`"\n"<p class="theirAttack">${enemy_name} does ${enemy_damage} damage to you.</p>`);
             player_attacked = false;
         }
         if(enemy_health <= 0){
@@ -79,7 +79,6 @@ $(".spell").click( () => {
 
 $("#combat-continue").click((event) => {
     let id = $(event.target).data("id");
-    console.log(id);
     changeCompleted(id);
 })
 
@@ -87,6 +86,6 @@ function changeCompleted(id) {
     $.ajax("/api/completed/" + id, {
         type: "GET"
     }).then(function() {
-        console.log("You completed this task.");
+        
     });
 };

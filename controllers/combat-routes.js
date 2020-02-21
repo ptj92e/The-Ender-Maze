@@ -2,7 +2,7 @@ let express = require("express");
 let combat_router = express.Router();
 const db = require("../models");
 const axios = require("axios");
-//requiring classes
+
 let Paladin = require("../domain/classes/Paladin");
 let Cleric = require("../domain/classes/Cleric");
 let Wizard = require("../domain/classes/wizard");
@@ -32,7 +32,6 @@ combat_router.get("/combat/:id&:encounter_id", (req, res) => {
             enemy_name = enemy_array[Math.floor(Math.random() * enemy_array.length)];
             
              
-            console.log(character);
             switch(character.class){
                 case "Wizard": {
                     let wizard = new Wizard(character.name, character.level);
