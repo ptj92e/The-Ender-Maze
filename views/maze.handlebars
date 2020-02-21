@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row justify-content-center">
-        <h1 class="text-center">Level 1</h1>
+        <h1 class="text-center animated fadeInDown">Level 1</h1>
     </div>
     <div class="row justify-content-center">
-        <div class="mazeDiv">
+        <div class="mazeDiv animated-fadeInLeft">
             <canvas id="enderMaze" width="300" height="300"></canvas>
             <canvas id="mazeFog" width="300" height="300"></canvas>
         </div>
-        <div>
+        <div class="animated fadeInRight">
             <div class="row justify-content-center">
                 <h3 class="text-center">{{hero.name}}</h3>
             </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center animated fadeInUp">
         <a href="/" class="storyButton" id="saveProgress">Save and Quit</a>
         <button class="storyButton" id="stats">Short Rest</button>
         <button class="storyButton" id="equipment">Equipment</button>
