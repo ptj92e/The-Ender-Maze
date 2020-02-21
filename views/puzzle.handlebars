@@ -1,25 +1,25 @@
 <div class="container">
     <div class="row justify-content-center">
-        <img src="/assets/images/torch.gif">
-        <h3 class="align-self-center text-center">Make your choice wisely.</h3>
-        <img src="/assets/images/torch.gif">
+        <img class="animated fadeInLeft" src="/assets/images/torch.gif">
+        <h3 class="align-self-center text-center animated fadeIn">Make your choice wisely.</h3>
+        <img class="animated fadeInRight" src="/assets/images/torch.gif">
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center animated fadeIn">
         <p class="text-center" id="puzzleText">{{encounter.puzzle.text}}</p>
     </div>
     <div class="row justify-content-center">
         <ul class="choices align-content-center" id="answerChoices" data-id={{encounter.puzzle.id}}>
             <div class="row justify-content-center">
-                <li class="text-center m-2" data-id="1" id="choice1">{{encounter.puzzle.choices.one}}</li>
-                <li class="text-center m-2" data-id="2" id="choice2">{{encounter.puzzle.choices.two}}</li>
+                <li class="text-center m-2 animated fadeInLeft" data-id="1" id="choice1">{{encounter.puzzle.choices.one}}</li>
+                <li class="text-center m-2 animated fadeInRight" data-id="2" id="choice2">{{encounter.puzzle.choices.two}}</li>
             </div>
             <div class="row justify-content-center">
-                <li class="text-center m-2" data-id="3" id="choice3">{{encounter.puzzle.choices.three}}</li>
-                <li class="text-center m-2" data-id="4" id="choice4">{{encounter.puzzle.choices.four}}</li>
+                <li class="text-center m-2 animated fadeInLeft" data-id="3" id="choice3">{{encounter.puzzle.choices.three}}</li>
+                <li class="text-center m-2 animated fadeInRight" data-id="4" id="choice4">{{encounter.puzzle.choices.four}}</li>
             </div>
         </ul>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center animated fadeInUp">
         <a href="/" class="storyButton" id="saveProgress">Save and Quit</a>
         <a href="/maze/{{encounter.character_id}}" class="storyButton" id="continueGame" hidden>Continue</a>
     </div>

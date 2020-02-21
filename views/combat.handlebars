@@ -1,7 +1,7 @@
 <div class="container">
-    <h1 class="text-center">Fight</h1>
+    <h1 class="text-center animated fadeInDown">Fight</h1>
     <div class="row">
-        <div class="col-4 combatChar">
+        <div class="col-4 combatChar animated fadeInLeft">
             <div class="row justify-content-center">
                 <p class="player-name" data-level={{hero.level}}>{{hero.name}}</p>
             </div>
@@ -23,7 +23,7 @@
                 <p class="player-health">{{hero.max_health}}</p>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4 animated fadeIn">
             <div class="row playerAttacks">
                 <ul>
                     {{#compare hero.class "==" "Wizard"}}
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 combatChar">
+        <div class="col-4 combatChar animated fadeInRight">
             <div class="row justify-content-center">
                 <p class="enemy-name">{{enemy.name}}</p>
             </div>
