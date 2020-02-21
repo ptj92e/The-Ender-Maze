@@ -10,8 +10,9 @@ let Rogue = require("../domain/classes/Rogue");
 let Enemy = require("../domain/classes/Enemy");
 
 
-combat_router.get("/combat/:id", (req, res) => {
+combat_router.get("/combat/:id&:encounter_id", (req, res) => {
     let id = req.params.id;
+    let encounter_id = req.params.encounter_id;
     db.Hero.findOne({
         raw: true, 
         where: {
@@ -36,28 +37,28 @@ combat_router.get("/combat/:id", (req, res) => {
                 case "Wizard": {
                     let wizard = new Wizard(character.name, character.level);
                     let enemy = new Enemy(enemy_name, wizard);
-                    res.render("combat", {hero: wizard, enemy: enemy}); 
+                    res.render("combat", {id: id, hero: wizard, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
                 case "Rogue": {
                     let rogue = new Rogue(character.name, character.level);
                     let enemy = new Enemy(enemy_name, rogue);
-                    res.render("combat", {hero: rogue, enemy: enemy}); 
+                    res.render("combat", {character: id, hero: rogue, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
                 case "Paladin": {
                     let paladin = new Paladin(character.name, character.level);
                     let enemy = new Enemy(enemy_name, paladin);
-                    res.render("combat", {hero: paladin, enemy: enemy}); 
+                    res.render("combat", {character: id, hero: paladin, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
                 case "Cleric": {
                     let cleric = new Cleric(character.name, character.level);
                     let enemy = new Enemy(enemy_name, cleric);
-                    res.render("combat", {hero: cleric, enemy: enemy}); 
+                    res.render("combat", {character: id, hero: cleric, enemy: enemy, encounter: encounter_id}); 
                 }
                 break;
     
