@@ -8,6 +8,8 @@ $("#paladin").on("click", function () {
         data: paladinName
     }).then(function () {
         console.log("Paladin created: " + paladinName);
+        window.location.href = "/characters";
+        
     });
 });
 
@@ -20,6 +22,8 @@ $("#cleric").on("click", function () {
         data: clericName
     }).then(function () {
         console.log("Cleric created: " + clericName);
+        window.location.href = "/characters";
+       
     });
 });
 
@@ -32,6 +36,8 @@ $("#rogue").on("click", function () {
         data: rogueName
     }).then(function () {
         console.log("Rogue created: " + rogueName);
+        window.location.href = "/characters";
+       
     });
 });
 
@@ -44,6 +50,8 @@ $("#wizard").on("click", function () {
         data: wizardName
     }).then(function () {
         console.log("Wizard created: " + wizardName);
+        window.location.href = "/characters";
+        
     });
 });
 //This gets the encounter information from the JSON file

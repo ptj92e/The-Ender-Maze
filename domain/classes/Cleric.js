@@ -28,6 +28,11 @@ class Cleric extends Character {
                 target.health -= damage;
                 console.log(`${this.name} does ${damage} damage to ${target.name}`);
             }
+            break;
+
+            default: {
+                return;
+            }
        }
    }
 
